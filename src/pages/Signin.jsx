@@ -1,12 +1,21 @@
 import React from 'react';
 
 const MetaMaskExtensionUrl = 'https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn';
+const netMap = {
+  1: 'Main Net',
+  2: 'Morden - deprecated',
+  3: 'Ropsen Test Net',
+  4: 'Rinkeby Test Net',
+  42: 'Kovan Test Net'
+
+};
 
 class Signin extends React.Component {
   constructor(){
     super();
     this.state = {
-      state: 'loading'
+      state: 'loading',
+      network: null
     }
   }
 
@@ -21,6 +30,11 @@ class Signin extends React.Component {
         }
         else {
           this.setState({ status: 'ready', accounts });
+        }
+      });
+      this.props.web3.version.getNetwork((err, netId) => {
+        if (!err) {
+          this.setState({ network: { netId, name: netMap[netId] || 'unknown network' } });
         }
       });
     } else {
@@ -65,10 +79,15 @@ class Signin extends React.Component {
   renderAgentHome() {
     console.log(this.state.accounts);
     return (
-      <div>
-        { this.state.accounts.map(account => (
-          <div className="Account" key={ account }>{ account }</div>
-        )) }
+      <div className="AgentHome">
+        <div className="Accounts">
+          <h2>Your Accounts{ this.state.network && ` (${this.state.network.name})`}:</h2>
+          <div className="AccountsList">
+            { this.state.accounts.map(account => (
+              <div className="Account" key={ account }>{ account }</div>
+            )) }
+          </div>
+        </div>
       </div>
     );
   }

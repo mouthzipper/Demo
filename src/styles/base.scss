@@ -1,0 +1,55 @@
+@import "/fonts/fonts.css";
+@import "/fonts/styles.css";
+
+* {
+  box-sizing: border-box;
+}
+
+body{
+  font-family: "y";
+  font-size: 14px;
+  line-height: 1.2;
+  color: white;
+  font-weight: 300;
+  background-color: #0a0120;
+}
+
+img{
+  max-width: 100%;
+}
+
+
+a, a:visited {
+  cursor: pointer;
+  text-decoration: none;
+  color: #192f7d;
+  &:hover {
+    color: #122567;
+  }
+}
+p {
+  margin-bottom: 20px;
+}
+h1 {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+h3 {
+  font-size: 1.4rem;
+}
+@media (max-width: 800px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+  h2 {
+    font-size: 2.2rem;
+    font-weight: bold;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+}

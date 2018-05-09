@@ -7,7 +7,7 @@
   "scripts": {
     "distribute": "./node_modules/webpack/bin/webpack.js --config ./webpack.config.prod.js",
     "dist": "yarn run distribute",
-    "start": "webpack-dev-server",
+    "start": "webpack-dev-server --port 8030",
     "lint": "./node_modules/eslint/bin/eslint.js src",
     "build": "babel src -d build",
     "build-watch": "babel src --watch -d build",
