@@ -3,12 +3,10 @@ import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
 import pages from './pages';
 import RouteWrapper from './elements/RouteWrapper';
-import Navigation from './elements/Navigation';
 
 const App = props => (
   <props.router context={{}} location={props.location}>
     <div className="Container">
-      <Navigation {...props} />
       <div className="Content">
         <Switch>
           { pages
