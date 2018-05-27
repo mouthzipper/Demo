@@ -1,4 +1,6 @@
 import React from 'react';
+// import Chat from '../elements/Chat';
+import abi from '../abis/mentat';
 
 const MetaMaskExtensionUrl = 'https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn';
 const netMap = {
@@ -6,35 +8,52 @@ const netMap = {
   2: 'Morden - deprecated',
   3: 'Ropsen Test Net',
   4: 'Rinkeby Test Net',
-  42: 'Kovan Test Net'
-
+  42: 'Kovan Test Net',
+  5777: 'Ganache Test Net'
 };
+const contractAdress = '0x00EfBCc3A77F3Fb9fF36BE751452B5dFE59E19E2';
 
-class Signin extends React.Component {
+class AgentSignin extends React.Component {
   constructor(){
     super();
     this.state = {
       state: 'loading',
+      accounts: null,
+      primaryAccount: 0,
+      online: false,
       network: null
     }
   }
 
   componentDidMount() {
+    this.verifyMetamask();
+  }
+
+  async init() {
+    const { eth } = this.props;
+    try {
+      const accounts = await eth.accounts();
+      this.setState({ accounts });
+      const Mentat = eth.contract(abi).at(accounts[this.state.primaryAccount]);
+      const user = await Mentat.agentSignIn();
+      this.setState({ user });
+    } catch (error) {
+      console.log('error', error);
+      this.setState({ error });
+    }
+  }
+
+  verifyMetamask() {
     if (!this.props.web3) {
       this.setState({ status: 'no_web3' });
     } else if (this.props.web3.currentProvider.isMetaMask === true) {
       this.setState({ status: 'fetching_accounts' });
       this.props.web3.eth.getAccounts((error, accounts) => {
-        if (accounts.length == 0) {
+        if (accounts.length === 0) {
           this.setState({ status: 'no_account' });
         }
         else {
           this.setState({ status: 'ready', accounts });
-        }
-      });
-      this.props.web3.version.getNetwork((err, netId) => {
-        if (!err) {
-          this.setState({ network: { netId, name: netMap[netId] || 'unknown network' } });
         }
       });
     } else {
@@ -62,6 +81,12 @@ class Signin extends React.Component {
             Welcome to Mentat. Enter you name and email to get started:
           </div>
         );
+      case 'connect_sc':
+        return (
+          <div className="Ready SplitScreen">
+            Account loaded, fetch contract...
+          </div>
+        );
       case 'fetching_accounts':
         return (
           <div className="Loading">Fetching your account details...</div>
@@ -77,7 +102,6 @@ class Signin extends React.Component {
   }
 
   renderAgentHome() {
-    console.log(this.state.accounts);
     return (
       <div className="AgentHome">
         <div className="Accounts">
@@ -94,11 +118,12 @@ class Signin extends React.Component {
 
   render(){
     return (
-      <div className="Signin">
+      <div className="AgentSignin">
         { this.renderStatus(this.state.status) }
+        {/* <Chat /> */}
       </div>
     );
   }
 }
 
-export default Signin;
+export default AgentSignin;

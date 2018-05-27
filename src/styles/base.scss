@@ -9,9 +9,9 @@ body{
   font-family: "y";
   font-size: 14px;
   line-height: 1.2;
-  color: white;
+  color: $dark;
   font-weight: 300;
-  background-color: #0a0120;
+  background-color: white;
 }
 
 img{
@@ -27,6 +27,32 @@ a, a:visited {
     color: #122567;
   }
 }
+.Button, button {
+  outline: none;
+  display: inline-block;
+  border-radius: 100px;
+  padding: 15px 25px;
+  transition-duration: 0.2s;
+  &.border {
+    border: 2px solid #606CFF;
+  }
+  &.gradient {
+    @extend %purpleGradient-btn;
+    color: white;
+  }
+  &:before {
+    height: 0;
+  }
+  &:hover {
+    text-decoration: none;
+    &.border {
+      border: 2px solid white;
+    }
+    &.gradient {
+      @extend %purpleGradient-btn-hover;
+    }
+  }
+}
 p {
   margin-bottom: 20px;
 }
@@ -40,6 +66,48 @@ h2 {
 }
 h3 {
   font-size: 1.4rem;
+}
+input {
+  padding: 15px 25px;
+  outline: none;
+  border: 1px solid $lightgrey;
+  width: 100%;
+  background-color: transparent;
+}
+.SplitScreen {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  .Col20 {
+    width: 20%;
+  }
+  .Col40 {
+    width: 40%;
+  }
+  .Col50 {
+    width: 50%;
+  }
+  .Col60 {
+    width: 60%;
+  }
+  .Col80 {
+    width: 80%;
+  }
+}
+.CenterText {
+  text-align: center;
+}
+.CenterContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.BlueBgd {
+  background-color: $lightBgd;
 }
 @media (max-width: 800px) {
   h1 {
