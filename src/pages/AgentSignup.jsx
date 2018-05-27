@@ -72,19 +72,25 @@ class AgentSignin extends React.Component {
     switch (status) {
       case 'no_web3':
         return (
-          <div className="Ready">
-            Please install <a href={ MetaMaskExtensionUrl } target="_blank" rel="noopener noreferrer">MetaMask</a>.
+          <div className="NoMetamask CenterContent">
+            <h3>Before you can start, you have to unlock MetaMask.</h3>
+            <div>
+              <a href={ MetaMaskExtensionUrl } className="Button gradient" target="_blank" rel="noopener noreferrer">Install MetaMask</a>
+            </div>
           </div>
         );
       case 'no_metamask':
         return (
-          <div className="Ready">
-            You have another Web3 provider. Mentat currently only supports <a href={ MetaMaskExtensionUrl } target="_blank" rel="noopener noreferrer">MetaMask</a>.
+          <div className="NoMetamask CenterContent">
+            <h3>Mentat currently only supports MetaMask as a web3 provider.</h3>
+            <div>
+              <a href={ MetaMaskExtensionUrl } className="Button gradient" target="_blank" rel="noopener noreferrer">Install MetaMask</a>
+            </div>
           </div>
         );
       case 'no_account':
         return (
-          <div className="Ready">
+          <div className="Ready CenterContent">
             We are glad to see you have MetaMask running. Now please create an account using the extension.
           </div>
         );

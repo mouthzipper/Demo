@@ -109,6 +109,12 @@ input {
 .BlueBgd {
   background-color: $lightBgd;
 }
+.NoMetamask {
+  height: 100vh;
+  .Button {
+    margin-top: 50px;
+  }
+}
 @media (max-width: 800px) {
   h1 {
     font-size: 2.2rem;
