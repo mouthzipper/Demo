@@ -8,7 +8,7 @@ const config = {
 
   entry: [
     'react-hot-loader/patch',
-    'webpack-dev-server/client?http://localhost:8030',
+    'webpack-dev-server/client?http://localhost:8090',
     'webpack/hot/only-dev-server',
     './browser.jsx',
     './styles/index.scss',
@@ -84,7 +84,7 @@ const config = {
       },
     }),
     new ExtractTextPlugin({ filename: './index.css', disable: false, allChunks: true }),
-    new OpenBrowserPlugin({ url: 'http://localhost:8030' }),
+    new OpenBrowserPlugin({ url: 'http://localhost:8090' }),
     new webpack.HotModuleReplacementPlugin(),
   ],
 };
