@@ -99,6 +99,10 @@ input {
 .CenterText {
   text-align: center;
 }
+.FullHeight {
+  height: 600px;
+  height: 100vh;
+}
 .CenterContent {
   display: flex;
   flex-direction: column;
@@ -106,10 +110,20 @@ input {
   text-align: center;
   justify-content: center;
 }
+.Banner {
+  background-color: $warning;
+  padding: 8px;
+  color: white;
+  a {
+    margin: 0 4px;
+    color: white;
+    text-decoration: underline;
+  }
+}
 .BlueBgd {
   background-color: $lightBgd;
 }
-.NoMetamask {
+.Web3Exception {
   height: 100vh;
   .Button {
     margin-top: 50px;

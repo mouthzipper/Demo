@@ -1,59 +1,5 @@
 module.exports = [
   {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_ethAddress",
-        "type": "address"
-      },
-      {
-        "name": "_skill",
-        "type": "uint256"
-      },
-      {
-        "name": "_experiencePoints",
-        "type": "uint256"
-      },
-      {
-        "name": "_level",
-        "type": "uint256"
-      }
-    ],
-    "name": "agentAddSkill",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [
-      {
-        "name": "agent",
-        "type": "address"
-      }
-    ],
-    "name": "isAgentOnline",
-    "outputs": [
-      {
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [],
-    "name": "agentRejectTask",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
     "constant": true,
     "inputs": [
       {
@@ -74,51 +20,6 @@ module.exports = [
       {
         "name": "level",
         "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "agentGetTask",
-    "outputs": [
-      {
-        "name": "appName",
-        "type": "string"
-      },
-      {
-        "name": "description",
-        "type": "string"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [],
-    "name": "agentFinishReview",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "agentGetReview",
-    "outputs": [
-      {
-        "name": "appName",
-        "type": "string"
-      },
-      {
-        "name": "description",
-        "type": "string"
       }
     ],
     "payable": false,
@@ -149,42 +50,6 @@ module.exports = [
     "type": "function"
   },
   {
-    "constant": false,
-    "inputs": [],
-    "name": "agentUpdateSkillLevel",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [],
-    "name": "skillRemoval",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [],
-    "name": "checkTask",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [],
-    "name": "skillUpdate",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
     "constant": true,
     "inputs": [],
     "name": "owner",
@@ -196,105 +61,6 @@ module.exports = [
     ],
     "payable": false,
     "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "agentGetAction",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [],
-    "name": "chooseAgentForReviewing",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [],
-    "name": "agentSignIn",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [],
-    "name": "agentStartReview",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [],
-    "name": "changeAgentTask",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_ethAddress",
-        "type": "address"
-      },
-      {
-        "name": "_name",
-        "type": "string"
-      },
-      {
-        "name": "_email",
-        "type": "string"
-      }
-    ],
-    "name": "agentUpdateAccount",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [],
-    "name": "addTask",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [],
-    "name": "updateAgentExperiencePoints",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [],
-    "name": "agentCompleteTask",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -317,17 +83,15 @@ module.exports = [
     "type": "function"
   },
   {
-    "constant": false,
-    "inputs": [],
-    "name": "agentAcceptTask",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
+    "constant": true,
     "inputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "agents",
+    "outputs": [
       {
         "name": "name",
         "type": "string"
@@ -335,26 +99,30 @@ module.exports = [
       {
         "name": "email",
         "type": "string"
-      }
-    ],
-    "name": "agentSignUp",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
+      },
       {
-        "name": "_ethAddress",
-        "type": "address"
+        "name": "isOffLineUntil",
+        "type": "uint256"
+      },
+      {
+        "name": "createdAt",
+        "type": "uint256"
+      },
+      {
+        "name": "lastAction",
+        "type": "uint256"
+      },
+      {
+        "name": "isOffLine",
+        "type": "bool"
+      },
+      {
+        "name": "isBusyNow",
+        "type": "bool"
       }
     ],
-    "name": "agentRemoval",
-    "outputs": [],
     "payable": false,
-    "stateMutability": "nonpayable",
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -386,5 +154,280 @@ module.exports = [
     ],
     "name": "FAIL",
     "type": "event"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "agentSignIn",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "name": "email",
+        "type": "string"
+      }
+    ],
+    "name": "agentSignUp",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "agent",
+        "type": "address"
+      }
+    ],
+    "name": "isAgentOnline",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "agentGetAction",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "agentGetTask",
+    "outputs": [
+      {
+        "name": "appName",
+        "type": "string"
+      },
+      {
+        "name": "description",
+        "type": "string"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "agentGetReview",
+    "outputs": [
+      {
+        "name": "appName",
+        "type": "string"
+      },
+      {
+        "name": "description",
+        "type": "string"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_ethAddress",
+        "type": "address"
+      }
+    ],
+    "name": "agentRemoval",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_ethAddress",
+        "type": "address"
+      },
+      {
+        "name": "_skill",
+        "type": "uint256"
+      },
+      {
+        "name": "_experiencePoints",
+        "type": "uint256"
+      },
+      {
+        "name": "_level",
+        "type": "uint256"
+      }
+    ],
+    "name": "agentAddSkill",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_ethAddress",
+        "type": "address"
+      },
+      {
+        "name": "_name",
+        "type": "string"
+      },
+      {
+        "name": "_email",
+        "type": "string"
+      }
+    ],
+    "name": "agentUpdateAccount",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "agentUpdateSkillLevel",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "updateAgentExperiencePoints",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "addTask",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "agentAcceptTask",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "agentCompleteTask",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "agentRejectTask",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "checkTask",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "changeAgentTask",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "chooseAgentForReviewing",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "agentStartReview",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "agentFinishReview",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "skillRemoval",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "skillUpdate",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
   }
 ];
