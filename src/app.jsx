@@ -34,7 +34,6 @@ class App extends React.Component {
           (route => route.byPassRequirements || route.requireAccount) :
         (route => route.byPassRequirements || route.requireNoAccount)
     );
-    console.log('Available pages:', pages.filter(routeFilter).map(p => p.path || 'notfound'))
 
     return (
       <props.router context={{}} location={props.location}>
