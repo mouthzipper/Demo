@@ -11,7 +11,7 @@
     "lint": "./node_modules/eslint/bin/eslint.js src",
     "build": "babel src -d build",
     "build-watch": "babel src --watch -d build",
-    "deploy": "rsync -rvz ~/Code/mentat/agent-hub/* mentat:/home/ubuntu/agent-hub --exclude=.git --exclude=node_modules",
+    "deploy": "rsync -rvz ~/Code/mentat/AgentHub/* mentat:/home/ubuntu/agent-hub --exclude=.git --exclude=node_modules",
     "gzip": "gzip -9rk ./static"
   },
   "devDependencies": {
