@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import pages from './pages';
 import RouteWrapper from './elements/RouteWrapper';
 import Web3Exception from './elements/Web3Exception';
@@ -9,8 +9,8 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      isOnline: false,
-    }
+      isOnline: false
+    };
   }
 
   componentDidMount() {
@@ -34,6 +34,7 @@ class App extends React.Component {
           (route => route.byPassRequirements || route.requireAccount) :
         (route => route.byPassRequirements || route.requireNoAccount)
     );
+    console.log('Available pages:', pages.filter(routeFilter).map(p => p.path || 'notfound'))
 
     return (
       <props.router context={{}} location={props.location}>
@@ -77,7 +78,11 @@ class App extends React.Component {
 App.propTypes = {
   location: PropTypes.shape({
     key: PropTypes.string.isRequired
-  })
+  }),
+  contract: PropTypes.shape({
+    isAgentOnline: PropTypes.func.isRequired
+  }),
+  accounts: PropTypes.array
 };
 
 export default App;

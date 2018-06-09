@@ -2,8 +2,6 @@ import React from 'react';
 const MetaMaskExtensionUrl = 'https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn';
 
 export default ({ exception }) => {
-  console.log('Mentat::exception:', exception);
-
   switch (exception) {
     case 'no_web3':
       return (

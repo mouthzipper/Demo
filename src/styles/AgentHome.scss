@@ -1,5 +1,8 @@
 .AgentHome {
-  padding: 20px;
+  background-color: $lightBgd;
+  .Inner {
+    padding: 30px 50px;
+  }
 }
 .Chat {
   color: white;

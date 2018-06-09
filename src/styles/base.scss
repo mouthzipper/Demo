@@ -95,6 +95,9 @@ input {
   .Col80 {
     width: 80%;
   }
+  main {
+    flex-grow: 3;
+  }
 }
 .CenterText {
   text-align: center;
@@ -127,6 +130,16 @@ input {
   height: 100vh;
   .Button {
     margin-top: 50px;
+  }
+}
+.Error {
+  padding: 10px;
+  border: 1px solid $errorDark;
+  background-color: $error;
+  color: white;
+  border-radius: 5px;
+  &.margin-top {
+    margin-top: 20px;
   }
 }
 @media (max-width: 800px) {

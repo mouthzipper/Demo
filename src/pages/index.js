@@ -4,9 +4,12 @@ import Welcome from './Welcome';
 import AgentHome from './AgentHome';
 import AgentSignin from './AgentSignin';
 import AgentSignup from './AgentSignup';
+import AgentTasks from './AgentTasks';
+import AgentReviews from './AgentReviews';
+import AgentSettings from './AgentSettings';
 
 const AutoRedirect = url => {
-  const NotFound = () => <Redirect to={ url } />;
+  const NotFound = () => <Redirect to={ `${url}${window.location ? `?from=${encodeURIComponent(window.location.pathname)}` : ''}`} />;
   return NotFound;
 }
 
@@ -23,10 +26,33 @@ export default [
     image: ''
   },
   {
-    component: AutoRedirect('/agent/signin'),
+    path: '/agent/tasks',
+    component: AgentTasks,
     requireAccount: true,
+    requireOnline: true,
     exact: true,
-    title: 'Agent Home',
+    title: 'Tasks',
+    description: '',
+    socialText: '',
+    image: ''
+  },
+  {
+    path: '/agent/reviews',
+    component: AgentReviews,
+    requireAccount: true,
+    requireOnline: true,
+    exact: true,
+    title: 'Reviews',
+    description: '',
+    socialText: '',
+    image: ''
+  },
+  {
+    path: '/agent/settings',
+    component: AgentSettings,
+    requireAccount: true,
+    requireOnline: true,
+    title: 'Settings',
     description: '',
     socialText: '',
     image: ''
@@ -36,6 +62,15 @@ export default [
     component: AgentHome,
     requireAccount: true,
     requireOnline: true,
+    exact: true,
+    title: 'Agent Home',
+    description: '',
+    socialText: '',
+    image: ''
+  },
+  {
+    component: AutoRedirect('/agent/signin'),
+    requireAccount: true,
     exact: true,
     title: 'Agent Home',
     description: '',
