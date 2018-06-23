@@ -13,7 +13,7 @@ class AgentTasks extends React.Component {
 
   async componentDidMount() {
     try {
-      const task = await this.props.contract.agentGetTask();
+      const task = await this.props.contract.agentGetCurrentTask();
       this.setState({ status: 'ready', task });
     } catch (error) {
       this.setState({ status: 'error', error });
@@ -34,8 +34,9 @@ class AgentTasks extends React.Component {
           <div className="Inner">
             { this.state.status === 'ready' && this.state.task &&
               <div className="Task">
-                <h2>{ this.state.task[0] }</h2>
-                <p>{ this.state.task[1] }</p>
+                { JSON.stringify(this.state.task) }
+                {/* <h2>{ this.state.task[0] }</h2>
+                <p>{ this.state.task[1] }</p> */}
               </div>
             }
           </div>
@@ -50,7 +51,7 @@ AgentTasks.propTypes = {
     key: PropTypes.string.isRequired
   }),
   contract: PropTypes.shape({
-    agentGetTask: PropTypes.func.isRequired,
+    agentGetCurrentTask: PropTypes.func.isRequired,
     agentSignIn: PropTypes.func.isRequired,
   }),
   accounts: PropTypes.array

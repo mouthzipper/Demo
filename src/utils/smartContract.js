@@ -18,6 +18,7 @@ export default (web3, contract, abi) => abi
   );
 
 export const getAccounts = (web3) => new Promise((resolve, reject) => {
+  setTimeout(() => reject('web3::getAccounts ERR_TIMEOUT'), 1000);
   web3.eth.getAccounts((error, accounts) => {
     if (error) {
       reject (error);

@@ -7,18 +7,58 @@ module.exports = [
         "type": "uint256"
       }
     ],
-    "name": "agentSkills",
+    "name": "tasksBundle2",
     "outputs": [
       {
-        "name": "skillID",
+        "name": "reviewAgent1",
+        "type": "address"
+      },
+      {
+        "name": "reviewAgent2",
+        "type": "address"
+      },
+      {
+        "name": "reviewAgent3",
+        "type": "address"
+      },
+      {
+        "name": "reviewResult1",
+        "type": "bool"
+      },
+      {
+        "name": "reviewResult2",
+        "type": "bool"
+      },
+      {
+        "name": "reviewResult3",
+        "type": "bool"
+      },
+      {
+        "name": "expectedPrice",
         "type": "uint256"
       },
       {
-        "name": "experiencePoints",
+        "name": "price",
         "type": "uint256"
       },
       {
-        "name": "level",
+        "name": "tokensAmount",
+        "type": "uint256"
+      },
+      {
+        "name": "withdrawn",
+        "type": "bool"
+      },
+      {
+        "name": "tokensWithdrawn",
+        "type": "bool"
+      },
+      {
+        "name": "expectedCompleteTime",
+        "type": "uint256"
+      },
+      {
+        "name": "completeTime",
         "type": "uint256"
       }
     ],
@@ -43,6 +83,119 @@ module.exports = [
       {
         "name": "skill",
         "type": "uint8"
+      },
+      {
+        "name": "agentsCount",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "applicationsCount",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "tasksBundle1",
+    "outputs": [
+      {
+        "name": "applicationID",
+        "type": "uint256"
+      },
+      {
+        "name": "agent",
+        "type": "address"
+      },
+      {
+        "name": "buyer",
+        "type": "address"
+      },
+      {
+        "name": "skillID",
+        "type": "uint256"
+      },
+      {
+        "name": "skillLevel",
+        "type": "uint256"
+      },
+      {
+        "name": "skillLevelMultiplier",
+        "type": "uint256"
+      },
+      {
+        "name": "request",
+        "type": "bytes32"
+      },
+      {
+        "name": "response",
+        "type": "bytes32"
+      },
+      {
+        "name": "description",
+        "type": "string"
+      },
+      {
+        "name": "status",
+        "type": "uint8"
+      },
+      {
+        "name": "rejectedAgentsCount",
+        "type": "uint256"
+      },
+      {
+        "name": "createdTimestamp",
+        "type": "uint256"
+      },
+      {
+        "name": "lastUpdateTimestamp",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "skillsCount",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "mentatToken",
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
       }
     ],
     "payable": false,
@@ -65,6 +218,20 @@ module.exports = [
   },
   {
     "constant": true,
+    "inputs": [],
+    "name": "tasksCount",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
     "inputs": [
       {
         "name": "",
@@ -74,7 +241,7 @@ module.exports = [
     "name": "applications",
     "outputs": [
       {
-        "name": "company",
+        "name": "name",
         "type": "string"
       }
     ],
@@ -101,23 +268,39 @@ module.exports = [
         "type": "string"
       },
       {
-        "name": "isOffLineUntil",
-        "type": "uint256"
-      },
-      {
-        "name": "createdAt",
-        "type": "uint256"
-      },
-      {
-        "name": "lastAction",
-        "type": "uint256"
-      },
-      {
-        "name": "isOffLine",
+        "name": "isBusy",
         "type": "bool"
       },
       {
-        "name": "isBusyNow",
+        "name": "agentSkillsCount",
+        "type": "uint256"
+      },
+      {
+        "name": "registrationTimestamp",
+        "type": "uint256"
+      },
+      {
+        "name": "lastActionTimestamp",
+        "type": "uint256"
+      },
+      {
+        "name": "tasksCompleted",
+        "type": "uint256"
+      },
+      {
+        "name": "tasksRejected",
+        "type": "uint256"
+      },
+      {
+        "name": "agentsReviews",
+        "type": "uint256"
+      },
+      {
+        "name": "currentTaskId",
+        "type": "uint256"
+      },
+      {
+        "name": "currentTaskType",
         "type": "bool"
       }
     ],
@@ -157,6 +340,20 @@ module.exports = [
   },
   {
     "constant": false,
+    "inputs": [
+      {
+        "name": "newMentatToken",
+        "type": "address"
+      }
+    ],
+    "name": "setMentatToken",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
     "inputs": [],
     "name": "agentSignIn",
     "outputs": [],
@@ -166,13 +363,22 @@ module.exports = [
   },
   {
     "constant": false,
+    "inputs": [],
+    "name": "agentSignOut",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
     "inputs": [
       {
-        "name": "name",
+        "name": "_name",
         "type": "string"
       },
       {
-        "name": "email",
+        "name": "_email",
         "type": "string"
       }
     ],
@@ -180,6 +386,25 @@ module.exports = [
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "agent",
+        "type": "address"
+      }
+    ],
+    "name": "isAgentRegistered",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -202,102 +427,8 @@ module.exports = [
     "type": "function"
   },
   {
-    "constant": true,
-    "inputs": [],
-    "name": "agentGetAction",
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "agentGetTask",
-    "outputs": [
-      {
-        "name": "appName",
-        "type": "string"
-      },
-      {
-        "name": "description",
-        "type": "string"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [],
-    "name": "agentGetReview",
-    "outputs": [
-      {
-        "name": "appName",
-        "type": "string"
-      },
-      {
-        "name": "description",
-        "type": "string"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "constant": false,
     "inputs": [
-      {
-        "name": "_ethAddress",
-        "type": "address"
-      }
-    ],
-    "name": "agentRemoval",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_ethAddress",
-        "type": "address"
-      },
-      {
-        "name": "_skill",
-        "type": "uint256"
-      },
-      {
-        "name": "_experiencePoints",
-        "type": "uint256"
-      },
-      {
-        "name": "_level",
-        "type": "uint256"
-      }
-    ],
-    "name": "agentAddSkill",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_ethAddress",
-        "type": "address"
-      },
       {
         "name": "_name",
         "type": "string"
@@ -314,117 +445,62 @@ module.exports = [
     "type": "function"
   },
   {
-    "constant": false,
+    "constant": true,
     "inputs": [],
-    "name": "agentUpdateSkillLevel",
-    "outputs": [],
+    "name": "agentGetCurrentTaskType",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool"
+      }
+    ],
     "payable": false,
-    "stateMutability": "nonpayable",
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "agentGetCurrentTask",
+    "outputs": [
+      {
+        "name": "taskId",
+        "type": "uint256"
+      },
+      {
+        "name": "taskType",
+        "type": "bool"
+      },
+      {
+        "name": "applicationName",
+        "type": "string"
+      },
+      {
+        "name": "description",
+        "type": "string"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
     "type": "function"
   },
   {
     "constant": false,
-    "inputs": [],
-    "name": "updateAgentExperiencePoints",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [],
-    "name": "addTask",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [],
-    "name": "agentAcceptTask",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [],
-    "name": "agentCompleteTask",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [],
-    "name": "agentRejectTask",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [],
-    "name": "checkTask",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [],
-    "name": "changeAgentTask",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [],
-    "name": "chooseAgentForReviewing",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [],
-    "name": "agentStartReview",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [],
-    "name": "agentFinishReview",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [],
-    "name": "skillRemoval",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [],
-    "name": "skillUpdate",
+    "inputs": [
+      {
+        "name": "taskId",
+        "type": "uint256"
+      },
+      {
+        "name": "agent",
+        "type": "address"
+      },
+      {
+        "name": "tokensAmount",
+        "type": "uint256"
+      }
+    ],
+    "name": "acceptTask",
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",

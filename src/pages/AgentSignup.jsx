@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 
 class AgentSignup extends React.Component {
@@ -81,5 +82,12 @@ class AgentSignup extends React.Component {
     );
   }
 }
+
+AgentSignup.propTypes = {
+  contract: PropTypes.shape({
+    agentSignUp: PropTypes.func.isRequired
+  }),
+  accounts: PropTypes.array
+};
 
 export default AgentSignup;

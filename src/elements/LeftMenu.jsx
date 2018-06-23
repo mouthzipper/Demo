@@ -50,7 +50,7 @@ class LeftMenu extends React.Component {
 
 LeftMenu.propTypes = {
   contract: PropTypes.shape({
-    agentSignOut: PropTypes.string.isRequired
+    agentSignOut: PropTypes.func.isRequired
   }),
   accounts: PropTypes.array
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 
 class AgentSignin extends React.Component {
@@ -37,5 +38,13 @@ class AgentSignin extends React.Component {
     );
   }
 }
+
+AgentSignin.propTypes = {
+  isOnline: PropTypes.bool.isRequired,
+  contract: PropTypes.shape({
+    agentSignIn: PropTypes.func.isRequired
+  }),
+  accounts: PropTypes.array
+};
 
 export default AgentSignin;

@@ -5,7 +5,6 @@ import AgentHome from './AgentHome';
 import AgentSignin from './AgentSignin';
 import AgentSignup from './AgentSignup';
 import AgentTasks from './AgentTasks';
-import AgentReviews from './AgentReviews';
 import AgentSettings from './AgentSettings';
 
 const AutoRedirect = url => {
@@ -32,17 +31,6 @@ export default [
     requireOnline: true,
     exact: true,
     title: 'Tasks',
-    description: '',
-    socialText: '',
-    image: ''
-  },
-  {
-    path: '/agent/reviews',
-    component: AgentReviews,
-    requireAccount: true,
-    requireOnline: true,
-    exact: true,
-    title: 'Reviews',
     description: '',
     socialText: '',
     image: ''

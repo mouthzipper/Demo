@@ -2,7 +2,7 @@ import React from 'react';
 const MetaMaskExtensionUrl = 'https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn';
 
 export default ({ exception }) => {
-  switch (exception) {
+  switch ((exception && exception.message) || exception) {
     case 'no_web3':
       return (
         <div className="Web3Exception CenterContent">

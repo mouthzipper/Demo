@@ -1,7 +1,6 @@
 const { resolve } = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
 const config = {
   devtool: 'cheap-module-eval-source-map',
@@ -84,7 +83,6 @@ const config = {
       },
     }),
     new ExtractTextPlugin({ filename: './index.css', disable: false, allChunks: true }),
-    new OpenBrowserPlugin({ url: 'http://localhost:8090' }),
     new webpack.HotModuleReplacementPlugin(),
   ],
 };
